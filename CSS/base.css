@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+.triangle-down{    
+    border: 5px solid;
+    border-style: solid dashed dashed;
+    border-color: #666666 transparent transparent;
+    width: 0;
+    height: 0;
+}
+
+body, div, ul, li, input, a, i{
+    padding: 0; 
+    margin: 0;    
+}
+ul, li{
+    list-style: none;
+}
+
+a{
+    color: #666666;
+}
