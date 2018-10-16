@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+  <link rel="stylesheet" href="./index.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <h3>输入城市可查询未来3天的天气预报</h3>
+  <input type="text" name="city" id="city" placeholder="请输入城市">
+  <ul class="tip-list">
+  </ul>
+  <input type="submit" value="查询" id="btnSubmit">
+
+  <ul class="weather-list">
+
+  </ul>
+
+  <script>
+    $('#city').on('keyup', function (e) {
+      if (e.which == 13) {
+        let $cityCode = $('#city').attr('city-code');
+        $('.tip-list li').css('display', 'none');
+        $.get(`http://t.weather.sojson.com/api/weather/city/${$cityCode}`, function (data) {
+          getWeather(data);
+        });
+      }else{
+        $.get('/get/tip', { input: $('#city').val() }, function (data) {
+          addToList(data);
+          if (data.length == 1) {
+            $('#city').attr('city-code', data[0]['city_code']);
+          }
+        });
+      }
+    });
+
+    $('#btnSubmit').on('click', function (e) {
+      let $cityCode = $('#city').attr('city-code');
+      $('.tip-list li').css('display', 'none');
+      $.get(`http://t.weather.sojson.com/api/weather/city/${$cityCode}`, function (data) {
+        getWeather(data);
+      });
+    });
+
+    function getWeather(data) {
+      let forecast = data.data.forecast;
+      let temp = "";
+      let today = new Date();
+      for (let i = 1; i < 4; i++) {
+        temp += `<li>日期 ${today.getFullYear()}年  ${today.getMonth()}月  ${forecast[i].date}</li>
+                   <li>天气 ${forecast[i].type}</li>
+                   <li>最${forecast[i].high}</li>
+                   <li>最${forecast[i].low}</li>
+                   <li>风向 ${forecast[i].fx}</li>
+                   <li>风速 ${forecast[i].fl}</li>
+                   <li>日出时间 ${forecast[i].sunrise}</li>
+                   <li>日落时间 ${forecast[i].sunset}</li>
+                   <li>空气指数 ${forecast[i].aqi}</li>
+                   <li>提醒 ${forecast[i].notice}</li>
+                   <br>
+                   `
+      }
+      $('.weather-list').html(temp);
+    }
+
+    function addToList(cityList) {
+      let temp = "";
+      for (city of cityList) {
+        temp += `<li city-code=${city.city_code}>${city.city_name}</li>`;
+      }
+      $('.tip-list').html(temp);
+      $('.tip-list li').on('click', function (e) {
+        $('#city').val($(this).text());
+        $('#city').attr('city-code', $(this).attr('city-code'));
+        $('.tip-list li').css('display', 'none');
+      });
+    }
+  </script>
+</body>
+
+</html>

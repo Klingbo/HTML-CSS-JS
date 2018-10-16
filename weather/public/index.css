@@ -1,0 +1,20 @@
+ul {
+  list-style: none;
+}
+.city-form {
+  position: relative;
+}
+.tip-list {
+  padding: 0;
+  width: 171px;
+  position: absolute;
+  border: 1px solid #ccc;
+  top: 68px;
+  background-color: #fff;
+}
+
+.tip-list li:hover {
+  background-color: #eee;
+  cursor: pointer;
+}
+
