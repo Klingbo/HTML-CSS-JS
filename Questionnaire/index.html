@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./index.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+  <title>员工满意度调查</title>
+
+</head>
+
+<body>
+  <div class="container">
+    <!-- 头部 -->
+    <header>
+      <h1 class="page-title">员工满意度调查</h1>
+      <a href="#" id="qrCode"></a>
+      <div class="cover">
+        <div id="qr">
+          <img src="./qrcode.ashx" alt="">
+          <span class="close-btn"></span>
+          <p>手机扫二维码答题</p>
+        </div>
+      </div>
+      <div class="greeting">
+        <p>尊敬的同事：</p>
+        <p>&nbsp; &nbsp; &nbsp; 您好！感谢您在百忙之中填写问卷，请您根据自己的实际感受和看法如实填写，本问卷采用匿名形式，所有数据仅供了解整体员工满意度情况，不针对个别数据进行研究。</p>
+      </div>
+      <div class="gap"></div>
+    </header>
+    <!-- 头部 -->
+
+    <!-- 主体 -->
+    <main>
+      <div class="side">
+        <p class="percent"></p>
+        <div class="bar">
+          <div class="inside"></div>
+        </div>
+      </div>
+      <!-- 基本情况 -->
+      <p class="title1">一、您的基本情况</p>
+      <!-- 问题1 -->
+      <div class="q1 question">
+        <div class="wrap">
+          <p class="subtitle">1、 您的婚姻情况</p>
+          <ul>
+            <li><input type='radio' id='q1-1' name="q1" value="1"><label for='q1-1'>A 未婚</label></li>
+            <li><input type='radio' id='q1-2' name="q1" value="2"><label for='q1-2'>B 已婚未生育</label></li>
+            <li><input type='radio' id='q1-3' name="q1" value="3"><label for='q1-3'>C 已婚已生育</label></li>
+          </ul>
+        </div>
+        <div class="q-gap"></div>
+        <p class="warnning">请选择选项</p>
+      </div>
+      <!-- 问题1 -->
+
+      <div class="q2">
+        <!-- 问题2-1 -->
+        <div class="q2-1 question">
+          <div class="wrap">
+            <p class="subtitle">你预计什么时候结婚（关联逻辑：此题针对第一题中选择“未婚”的人群）</p>
+            <ul>
+              <li><input type='radio' id='q2-1-1' name='q2-1'><label for='q2-1-1'>一年内</label></li>
+              <li><input type='radio' id='q2-1-2' name='q2-1'><label for='q2-1-2'>三年内</label></li>
+              <li><input type='radio' id='q2-1-3' name='q2-1'><label for='q2-1-3'>五年内</label></li>
+            </ul>
+          </div>
+          <div class="q-gap"></div>
+          <p class="warnning">请选择选项</p>
+        </div>
+        <!-- 问题2-1 -->
+        <!-- 问题2-2 -->
+        <div class="q2-2 question">
+          <div class="wrap">
+            <p class="subtitle">你预计什么要小孩（关联逻辑：此题针对第一题中选择“已婚未生育”的人群）</p>
+            <ul>
+              <li><input type='radio' id='q2-2-1' name='q2-2'><label for='q2-2-1'>一年内</label></li>
+              <li><input type='radio' id='q2-2-2' name='q2-2'><label for='q2-2-2'>两年内</label></li>
+              <li><input type='radio' id='q2-2-3' name='q2-2'><label for='q2-2-3'>三年内</label></li>
+            </ul>
+          </div>
+          <div class="q-gap"></div>
+          <p class="warnning">请选择选项</p>
+        </div>
+        <!-- 问题2-2 -->
+        <!-- 问题2-3 -->
+        <div class="q2-3 question">
+          <div class="wrap">
+            <p class="subtitle">你有几个小孩（关联逻辑：此题针对第一题中选择“已婚已生育”的人群</p>
+            <ul>
+              <li><input type='radio' id='q2-3-1' name='q2-3'><label for='q2-3-1'>1个</label></li>
+              <li><input type='radio' id='q2-3-2' name='q2-3'><label for='q2-3-2'>2个</label></li>
+              <li><input type='radio' id='q2-3-3' name='q2-3'><label for='q2-3-3'>3个</label></li>
+            </ul>
+          </div>
+          <div class="q-gap"></div>
+          <p class="warnning">请选择选项</p>
+        </div>
+        <!-- 问题2-3 -->
+      </div>
+
+      <!-- 问题3 -->
+      <div class="q3 question">
+        <div class="wrap">
+          <p class="subtitle">2、 您的年龄：</p>
+          <ul>
+            <li><input type='radio' id='q3-1' name='q3'><label for='q3-1'>A 25岁以下</label></li>
+            <li><input type='radio' id='q3-2' name='q3'><label for='q3-2'>B 26-35岁</label></li>
+            <li><input type='radio' id='q3-3' name='q3'><label for='q3-3'>C 36-45岁</label></li>
+            <li><input type='radio' id='q3-4' name='q3'><label for='q3-4'>D 45岁以上</label></li>
+          </ul>
+        </div>
+        <div class="q-gap"></div>
+        <p class="warnning">请选择选项</p>
+      </div>
+      <!-- 问题3 -->
+
+      <!-- 问题4 -->
+      <div class="q4 question">
+        <div class="wrap">
+          <p class="subtitle">3、 您的最高学历：</p>
+          <ul>
+            <li><input type='radio' id='q4-1' name='q4'><label for='q4-1'>A高中/中专及以下</label></li>
+            <li><input type='radio' id='q4-2' name='q4'><label for='q4-2'>B大专</label></li>
+            <li><input type='radio' id='q4-3' name='q4'><label for='q4-3'>C本科</label></li>
+            <li><input type='radio' id='q4-4' name='q4'><label for='q4-4'>D硕士及以上</label></li>
+          </ul>
+        </div>
+        <div class="q-gap"></div>
+        <p class="warnning">请选择选项</p>
+      </div>
+      <!-- 问题4 -->
+
+      <!-- 问题5 -->
+      <div class="q5 question">
+        <div class="wrap">
+          <p class="subtitle">4、 您的工作年限：（跳题逻辑：选择A项，直接跳转到问卷末尾，因为本次调查不针对0到3个月的员工</p>
+          <ul>
+            <li><input type='radio' id='q5-1' name='q5' value="1"><label for='q5-1'>A 0-3个月</label></li>
+            <li><input type='radio' id='q5-2' name='q5' value="2"><label for='q5-2'>B 3-6个月</label></li>
+            <li><input type='radio' id='q5-3' name='q5' value="3"><label for='q5-3'>C 6个月-1年</label></li>
+            <li><input type='radio' id='q5-4' name='q5' value="4"><label for='q5-4'>D 1-2年</label></li>
+            <li><input type='radio' id='q5-5' name='q5' value="5"><label for='q5-5'>E 2年以上</label></li>
+          </ul>
+        </div>
+        <div class="q-gap"></div>
+        <p class="warnning">请选择选项</p>
+      </div>
+      <!-- 问题5 -->
+      <div class="over-three-month">
+        <!-- 问题6 -->
+        <div class="q6 question">
+          <div class="wrap">
+            <p class="subtitle">5、您的工作类型：</p>
+            <ul>
+              <li><input type='radio' id='q6-1' name='q6'><label for='q6-1'>A 销售类</label></li>
+              <li><input type='radio' id='q6-2' name='q6'><label for='q6-2'>B 支持辅助类</label></li>
+              <li><input type='radio' id='q6-3' name='q6'><label for='q6-3'>C 管理类</label></li>
+            </ul>
+          </div>
+          <div class="q-gap"></div>
+          <p class="warnning">请选择选项</p>
+        </div>
+        <!-- 问题6 -->
+        <!-- 基本情况 -->
+
+        <!-- 工作满意度 -->
+        <p class="title1">二、对工作本身的满意度</p>
+        <!-- 问题7 -->
+        <div class="q7 question">
+          <div class="wrap">
+            <p class="subtitle">1、您对本人的工作岗位是否感到满意？</p>
+            <ul>
+              <li><input type='radio' id='q7-1' name='q7'><label for='q7-1'>A 很满意</label></li>
+              <li><input type='radio' id='q7-2' name='q7'><label for='q7-2'>B 满意</label></li>
+              <li><input type='radio' id='q7-3' name='q7'><label for='q7-3'>C 一般</label></li>
+              <li><input type='radio' id='q7-4' name='q7'><label for='q7-4'>D 不满意</label></li>
+              <li><input type='radio' id='q7-5' name='q7'><label for='q7-5'>E 极不满意</label></li>
+            </ul>
+          </div>
+          <div class="q-gap"></div>
+          <p class="warnning">请选择选项</p>
+        </div>
+        <!-- 问题7 -->
+
+        <!-- 问题8 -->
+        <div class="q8 question">
+          <div class="wrap">
+            <p class="subtitle">2、您对您与工作的匹配程度是否满意</p>
+            <ul>
+              <li><input type='radio' id='q8-1' name='q8'><label for='q8-1'>A 很满意</label></li>
+              <li><input type='radio' id='q8-2' name='q8'><label for='q8-2'>B 满意</label></li>
+              <li><input type='radio' id='q8-3' name='q8'><label for='q8-3'>C 一般</label></li>
+              <li><input type='radio' id='q8-4' name='q8'><label for='q8-4'>D 不满意</label></li>
+              <li><input type='radio' id='q8-5' name='q8'><label for='q8-5'>E 极不满意</label></li>
+            </ul>
+          </div>
+          <div class="q-gap"></div>
+          <p class="warnning">请选择选项</p>
+        </div>
+        <!-- 问题8 -->
+        <!-- 工作满意度 -->
+
+        <!-- 回报与发展满意度 -->
+        <p class="title1">三、对工作回报与发展的满意度</p>
+        <!-- 问题9 -->
+        <div class="q9 question">
+          <div class="wrap">
+            <p class="subtitle">1、您对您的目前的薪资水平是否满意？</p>
+            <ul>
+              <li><input type='radio' id='q9-1' name='q9'><label for='q9-1'>A 很满意</label></li>
+              <li><input type='radio' id='q9-2' name='q9'><label for='q9-2'>B 满意</label></li>
+              <li><input type='radio' id='q9-3' name='q9'><label for='q9-3'>C 一般</label></li>
+              <li><input type='radio' id='q9-4' name='q9'><label for='q9-4'>D 不满意</label></li>
+              <li><input type='radio' id='q9-5' name='q9'><label for='q9-5'>E 极不满意</label></li>
+            </ul>
+          </div>
+          <div class="q-gap"></div>
+          <p class="warnning">请选择选项</p>
+        </div>
+        <!-- 问题9 -->
+
+        <!-- 问题10 -->
+        <div class="q10 question">
+          <div class="wrap">
+
+            <p class="subtitle">2、您对公司报酬、奖励的公平性是否满意？</p>
+            <ul>
+              <li><input type='radio' id='q10-1' name='q10'><label for='q10-1'>A 很满意</label></li>
+              <li><input type='radio' id='q10-2' name='q10'><label for='q10-2'>B 满意</label></li>
+              <li><input type='radio' id='q10-3' name='q10'><label for='q10-3'>C 一般</label></li>
+              <li><input type='radio' id='q10-4' name='q10'><label for='q10-4'>D 不满意</label></li>
+              <li><input type='radio' id='q10-5' name='q10'><label for='q10-5'>E 极不满意</label></li>
+            </ul>
+          </div>
+          <div class="q-gap"></div>
+          <p class="warnning">请选择选项</p>
+        </div>
+        <!-- 问题10 -->
+        <!-- 回报与发展满意度 -->
+
+        <!-- 领导管理满意度 -->
+        <p class="title1">四、对领导管理的满意度</p>
+        <!-- 问题11 -->
+        <div class="q11 question">
+          <div class="wrap">
+
+            <p class="subtitle">1、您对公司高层领导管理者的管理能力与水平是否满意？</p>
+            <ul>
+              <li><input type='radio' id='q11-1' name='q11'><label for='q11-1'>A 很满意</label></li>
+              <li><input type='radio' id='q11-2' name='q11'><label for='q11-2'>B 满意</label></li>
+              <li><input type='radio' id='q11-3' name='q11'><label for='q11-3'>C 一般</label></li>
+              <li><input type='radio' id='q11-4' name='q11'><label for='q11-4'>D 不满意</label></li>
+              <li><input type='radio' id='q11-5' name='q11'><label for='q11-5'>E 极不满意</label></li>
+            </ul>
+          </div>
+          <div class="q-gap"></div>
+          <p class="warnning">请选择选项</p>
+        </div>
+        <!-- 问题11 -->
+
+        <!-- 问题12 -->
+        <div class="q12 question">
+          <div class="wrap">
+
+            <p class="subtitle">2、您对直接上级的管理能力与业务水平是否满意？</p>
+            <ul>
+              <li><input type='radio' id='q12-1' name='q12'><label for='q12-1'>A 很满意</label></li>
+              <li><input type='radio' id='q12-2' name='q12'><label for='q12-2'>B 满意</label></li>
+              <li><input type='radio' id='q12-3' name='q12'><label for='q12-3'>C 一般</label></li>
+              <li><input type='radio' id='q12-4' name='q12'><label for='q12-4'>D 不满意</label></li>
+              <li><input type='radio' id='q12-5' name='q12'><label for='q12-5'>E 极不满意</label></li>
+            </ul>
+          </div>
+          <div class="q-gap"></div>
+          <p class="warnning">请选择选项</p>
+        </div>
+        <!-- 问题12 -->
+        <!-- 领导管理满意度 -->
+
+        <!-- 工作环境满意度 -->
+        <p class="title1">五、对工作环境与背景的满意度</p>
+        <!-- 问题13 -->
+        <div class="q13 question">
+          <div class="wrap">
+
+            <p class="subtitle">1、您认为工作环境、设施设备的健康和安全预防措施是否足够且让人满意？</p>
+            <ul>
+              <li><input type='radio' id='q13-1' name='q13'><label for='q13-1'>A 很满意</label></li>
+              <li><input type='radio' id='q13-2' name='q13'><label for='q13-2'>B 满意</label></li>
+              <li><input type='radio' id='q13-3' name='q13'><label for='q13-3'>C 一般</label></li>
+              <li><input type='radio' id='q13-4' name='q13'><label for='q13-4'>D 不满意</label></li>
+              <li><input type='radio' id='q13-5' name='q13'><label for='q13-5'>E 极不满意</label></li>
+            </ul>
+          </div>
+          <div class="q-gap"></div>
+          <p class="warnning">请选择选项</p>
+        </div>
+        <!-- 问题13 -->
+
+        <!-- 问题14 -->
+        <div class="q14 question">
+          <div class="wrap">
+
+            <p class="subtitle">2、您对公司提供的工作中需要的资源(材料、设施、工具)是否满意？</p>
+            <ul>
+              <li><input type='radio' id='q14-1' name='q14'><label for='q14-1'>A 很满意</label></li>
+              <li><input type='radio' id='q14-2' name='q14'><label for='q14-2'>B 满意</label></li>
+              <li><input type='radio' id='q14-3' name='q14'><label for='q14-3'>C 一般</label></li>
+              <li><input type='radio' id='q14-4' name='q14'><label for='q14-4'>D 不满意</label></li>
+              <li><input type='radio' id='q14-5' name='q14'><label for='q14-5'>E 极不满意</label></li>
+            </ul>
+          </div>
+          <div class="q-gap"></div>
+          <p class="warnning">请选择选项</p>
+        </div>
+        <!-- 问题14 -->
+        <!-- 工作环境满意度 -->
+
+        <!-- 工作关系满意度 -->
+        <p class="title1">六、对工作关系的满意度</p>
+        <!-- 问题15 -->
+        <div class="q15 question">
+          <div class="wrap">
+
+            <p class="subtitle">1、您对同事之间的沟通与配合是否满意？</p>
+            <ul>
+              <li><input type='radio' id='q15-1' name='q15'><label for='q15-1'>A 很满意</label></li>
+              <li><input type='radio' id='q15-2' name='q15'><label for='q15-2'>B 满意</label></li>
+              <li><input type='radio' id='q15-3' name='q15'><label for='q15-3'>C 一般</label></li>
+              <li><input type='radio' id='q15-4' name='q15'><label for='q15-4'>D 不满意</label></li>
+              <li><input type='radio' id='q15-5' name='q15'><label for='q15-5'>E 极不满意</label></li>
+            </ul>
+          </div>
+          <div class="q-gap"></div>
+          <p class="warnning">请选择选项</p>
+        </div>
+        <!-- 问题15 -->
+
+        <!-- 问题16 -->
+        <div class="q16 question">
+          <div class="wrap">
+
+            <p class="subtitle">2、您对您和周围同事的工作责任感及主动性满意吗？</p>
+            <ul>
+              <li><input type='radio' id='q16-1' name='q16'><label for='q16-1'>A 很满意</label></li>
+              <li><input type='radio' id='q16-2' name='q16'><label for='q16-2'>B 满意</label></li>
+              <li><input type='radio' id='q16-3' name='q16'><label for='q16-3'>C 一般</label></li>
+              <li><input type='radio' id='q16-4' name='q16'><label for='q16-4'>D 不满意</label></li>
+              <li><input type='radio' id='q16-5' name='q16'><label for='q16-5'>E 极不满意</label></li>
+            </ul>
+          </div>
+          <div class="q-gap"></div>
+          <p class="warnning">请选择选项</p>
+        </div>
+        <!-- 问题16 -->
+        <!-- 工作关系满意度 -->
+
+        <!-- 整体满意度 -->
+        <p class="title1">七、对企业整体的满意度</p>
+        <!-- 问题17 -->
+        <div class="q17 question">
+          <div class="wrap">
+
+            <p class="subtitle">1、您对公司的历史、公司文化是否满意</p>
+            <ul>
+              <li><input type='radio' id='q17-1' name='q17'><label for='q17-1'>A 很满意</label></li>
+              <li><input type='radio' id='q17-2' name='q17'><label for='q17-2'>B 满意</label></li>
+              <li><input type='radio' id='q17-3' name='q17'><label for='q17-3'>C 一般</label></li>
+              <li><input type='radio' id='q17-4' name='q17'><label for='q17-4'>D 不满意</label></li>
+              <li><input type='radio' id='q17-5' name='q17'><label for='q17-5'>E 极不满意</label></li>
+            </ul>
+          </div>
+          <div class="q-gap"></div>
+          <p class="warnning">请选择选项</p>
+        </div>
+        <!-- 问题17 -->
+
+        <!-- 问题18 -->
+        <div class="q18 question">
+          <p class="subtitle">2、您对公司目前还有哪些建议和意见</p>
+          <div class="text question">
+            <textarea cols="60" rows="6"></textarea>
+          </div>
+          <div class="q-gap"></div>
+
+        </div>
+        <!-- 问题18 -->
+        <!-- 整体满意度 -->
+      </div>
+    </main>
+    <!-- 主体 -->
+    <!-- 页脚 -->
+    <div class="btn">
+      <input type="button" value="提交答卷" id="btn-submit">
+    </div>
+    <div class="btn-gap"></div>
+    <!-- 页脚 -->
+  </div>
+
+  <script>
+    (function () {
+      window.onload = function () {
+        let checkedItem = 0;
+        $('#q1-1').on('click', function (e) {
+          show(this.value)
+        });
+        $('#q1-2').on('click', function (e) {
+          show(this.value)
+        });
+        $('#q1-3').on('click', function (e) {
+          show(this.value)
+        });
+        $('.q5').on('click', function (e) {
+          if (document.getElementById('q5-1').checked) {
+            $('.over-three-month').css('display', 'none');
+          } else {
+            $('.over-three-month').css('display', 'block');
+          }
+        });
+        $('input[type="radio"]').on('click', function (e) {
+          $(this).parent().parent().parent().attr('check', 'checked');
+          $(this).parent().parent().parent().css('border', 'none');
+          $('.warnning').css('display', 'none')
+          $('.side').css('display', 'block');
+          $('.percent').text(parseInt(($('div[check="checked"]').length / 17) * 100) + '%');
+          $('.inside').css('height', $('div[check="checked"]').length * 120 / 17 + 'px');
+
+        });
+        $('#btn-submit').on('click', function (e) {
+          if(document.getElementById('q5-1').checked){
+            return
+          }
+          if ($('div[check="checked"]').length != 17) {
+            alert('请确保所有内容填写正确，页面将自动定位到第一个不符合要求的题目，请检查！');
+            $('.question').each(function (ind, ele) {
+              if ($(ele).attr('check') == null) {
+                $(this).children('.wrap').css('border', '2px solid rgb(255, 153, 0)');
+                $('.warnning').css('display', 'block')
+              }
+            })
+          }
+        });
+        $(document).scroll(function () {
+          $('.side').css('top', $(this).scrollTop())
+        });
+        
+        $('.close-btn').on('click', function(e) {
+          $('.cover').css('display', 'none');
+        })
+        
+        $('#qrCode').on('click', function(e) {
+          $('.cover').css('display', 'block');
+        })
+      }// end of window.onload
+
+      function show(val) {
+        $('.q2-' + val).css('display', 'block');
+        $('.q2-' + val).siblings().css('display', 'none');
+      }
+    })();
+  </script>
+</body>
+
+</html>
